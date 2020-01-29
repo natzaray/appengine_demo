@@ -1,0 +1,15 @@
+entrypoint: java -jar cicd-try-0.0.1-SNAPSHOT.jar
+runtime: java11
+instance_class: F4
+service: santoscicd
+handlers:
+- url: /.*
+  script: auto
+resources:
+  cpu: 2
+  memory_gb: 2.3
+  disk_size_gb: 10
+  volumes:
+  - name: ramdisk1
+    volume_type: tmpfs
+    size_gb: 0.5
